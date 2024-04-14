@@ -50,14 +50,9 @@ class MainWindow(QMainWindow):
 
 
     def f_exit(self):
-        try:
             sys.exit()
-        except:
             quit()
-        
-        try:
             os._exit()
-        except:
             exit()
 
     def unblock(self):
