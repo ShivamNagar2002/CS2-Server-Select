@@ -16,7 +16,7 @@ A Simple Python based server select script for CS2. Easy and Simple to use .
 
 ## Installation
 
-Download Python 3.10.11 (https://www.python.org/downloads/release/python-31011/)
+Download Python 3.10.11 [here](https://www.python.org/downloads/release/python-31011/)
 
 Install CS-Server-Select with gitclone
 
@@ -27,7 +27,9 @@ run "main/install.ps1"
 
 run "main/run.py"
 __________________________________________________________
-Download Executable [Release](https://github.com/ShivamNagar2002/CS2-Server-Select/releases/tag/release)
+## Download Executable 
+[Release](https://github.com/ShivamNagar2002/CS2-Server-Select/releases/tag/release)
+
 Run as Admin
 
 
