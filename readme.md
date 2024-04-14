@@ -24,6 +24,7 @@ Install CS-Server-Select with gitclone
   git clone https://github.com/ShivamNagar2002/CS-Server-Select/tree/main/main
 ```
 run "main/install.ps1" 
+
 run "main/run.py"
 
 
