@@ -2,6 +2,7 @@ from main_ui import *
 import sys
 import time 
 from main_ui import Ui_MainWindow
+from pop_ui import Ui_popWindow
 import sys
 from PySide2 import QtCore
 from PySide2.QtCore import *
@@ -12,7 +13,74 @@ import json
 import os 
 import sys
 import pyuac
-import threading
+
+
+
+
+
+
+toblk = []
+sv_list = ["maa", "maa2", "bom", "bom2", "dxb", "sgp", "seo", "ams", "atl", "fra", "lhr", "par", "mad", "dfw", "jfk", "iad", "sea", "canm", "ctum", "sham", "tsnm" ]
+
+currBlocked = [] 
+alldata = []
+counter = 0
+
+class PopScreen(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_popWindow()
+        self.ui.setupUi(self)
+
+
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+
+     
+
+
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.progress)
+
+        self.timer.start(4)
+
+
+
+        self.show()
+
+    def progress(self):
+
+        global counter
+
+
+
+
+        if counter > 100:
+      
+            self.timer.stop()
+
+      
+            self.main = MainWindow()
+            self.main.show()
+
+       
+            self.close()
+
+
+        counter += 1
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -332,6 +400,7 @@ if __name__ == "__main__":
         print("Re-launching as admin!")
         pyuac.runAsAdmin()
     else:        
-        app = QApplication(sys.argv)
-        window = MainWindow()
-        sys.exit(app.exec_())
+        if __name__ == "__main__":
+            app = QApplication(sys.argv)
+            window = PopScreen()
+            sys.exit(app.exec_())
