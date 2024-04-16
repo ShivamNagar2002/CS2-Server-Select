@@ -170,6 +170,18 @@ class MainWindow(QMainWindow):
 
     def block(self):
         global toblk, sv_list , alldata, currBlocked
+
+        for tmpx in sv_list:
+            if tmpx not in toblk:
+                cmd = "netsh advfirewall firewall show rule name=CS2ServerSelect_BLOCK_{0} >NUL 2>&1".format(tmpx)
+                if os.system(cmd) != 1:
+                    try:
+                        cmd = "netsh advfirewall firewall delete rule name=CS2ServerSelect_BLOCK_{0}  >NUL 2>&1".format(tmpx)
+                        os.system(cmd)
+                    except:
+                        pass
+
+
         for tmpx in toblk :
             x = 0
             x2 = ""
@@ -182,9 +194,14 @@ class MainWindow(QMainWindow):
                 if x > 0:
                     x2 = x2 + "," + alldata[tmpx][x]
                 x= x+1
-            if tmpx not in currBlocked :
-                cmd = "netsh advfirewall firewall add rule  name={0}  dir=out action=block protocol=ANY  remoteip= \"{1}\" >NUL 2>&1".format(tmpvar, x2)
-                os.system(cmd)
+            cmd = "netsh advfirewall firewall show rule name=CS2ServerSelect_BLOCK_{0} >NUL 2>&1".format(tmpx)
+            if os.system(cmd) == 1:
+                try:
+                    cmd = "netsh advfirewall firewall add rule  name={0}  dir=out action=block protocol=ANY  remoteip= \"{1}\" >NUL 2>&1".format(tmpvar, x2)
+                    os.system(cmd)
+                except:
+                    pass
+
                 
 
 
