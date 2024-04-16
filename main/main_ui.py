@@ -63,7 +63,7 @@ class Ui_MainWindow(object):
 "")
         self.stackedWidget = QStackedWidget(self.mainFrame)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setGeometry(QRect(30, 50, 801, 411))
+        self.stackedWidget.setGeometry(QRect(30, 50, 800, 410))
         self.stackedWidget.setFont(font)
         self.stackedWidget.setStyleSheet(u"QStackedWidget {\n"
 "background: #0C0E10;\n"
@@ -208,6 +208,16 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
+        self.label_4 = QLabel(self.page_2)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(360, 190, 80, 30))
+        font2 = QFont()
+        font2.setFamily(u"Arial")
+        font2.setPointSize(15)
+        font2.setBold(True)
+        font2.setWeight(75)
+        self.label_4.setFont(font2)
+        self.label_4.setStyleSheet(u"color: grey;")
         self.stackedWidget.addWidget(self.page_2)
         self.pushButton = QPushButton(self.mainFrame)
         self.pushButton.setObjectName(u"pushButton")
@@ -220,12 +230,12 @@ class Ui_MainWindow(object):
         self.pushButton_3 = QPushButton(self.mainFrame)
         self.pushButton_3.setObjectName(u"pushButton_3")
         self.pushButton_3.setGeometry(QRect(570, 490, 140, 20))
-        font2 = QFont()
-        font2.setFamily(u"Arial")
-        font2.setBold(True)
-        font2.setUnderline(True)
-        font2.setWeight(75)
-        self.pushButton_3.setFont(font2)
+        font3 = QFont()
+        font3.setFamily(u"Arial")
+        font3.setBold(True)
+        font3.setUnderline(True)
+        font3.setWeight(75)
+        self.pushButton_3.setFont(font3)
         self.pushButton_3.setStyleSheet(u"\n"
 "background : #121417;\n"
 "color : #C42121;\n"
@@ -234,7 +244,7 @@ class Ui_MainWindow(object):
         self.pushButton_4 = QPushButton(self.mainFrame)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setGeometry(QRect(30, 480, 140, 20))
-        self.pushButton_4.setFont(font2)
+        self.pushButton_4.setFont(font3)
         self.pushButton_4.setStyleSheet(u"\n"
 "background : #121417;\n"
 "color : #C42121;\n"
@@ -248,8 +258,11 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.stackedWidget.setCurrentIndex(1)
+
+
         QMetaObject.connectSlotsByName(MainWindow)
-    # setupUi
+
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
@@ -281,6 +294,7 @@ class Ui_MainWindow(object):
         self.checkBox_17.setText(QCoreApplication.translate("MainWindow", u"iad (Virginia)", None))
         self.checkBox_18.setText(QCoreApplication.translate("MainWindow", u"sea (Washington)", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Select Servers to Block.", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Loading", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Start", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Reset All (Unblock All)", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"GitHub", None))
