@@ -28,7 +28,7 @@ run "main/install.ps1"
 run "main/run.py"
 __________________________________________________________
 ## Download Executable 
-[Release](https://github.com/ShivamNagar2002/CS2-Server-Select/releases/tag/release)
+[Release](https://github.com/ShivamNagar2002/CS2-Server-Select/releases/)
 
 Run as Admin
 
