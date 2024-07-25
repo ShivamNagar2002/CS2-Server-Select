@@ -21,7 +21,7 @@ Download Python 3.10.11 [here](https://www.python.org/downloads/release/python-3
 Install CS-Server-Select with gitclone
 
 ```bash
-  git clone https://github.com/ShivamNagar2002/CS-Server-Select/tree/main/main
+  git clone https://github.com/ShivamNagar2002/CS-Server-Select/
 ```
 run "main/install.ps1" 
 
