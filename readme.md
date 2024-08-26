@@ -34,4 +34,7 @@ Run as Admin
 
 
 ## ScreenShots
-![image](https://github.com/user-attachments/assets/41c303bc-3afd-4dd7-894d-727c72f76ba6)
+![image](https://github.com/user-attachments/assets/28891749-6427-4a82-bb19-82c1082188be)
+
+![image](https://github.com/user-attachments/assets/628f9dc1-2ce9-4b95-ab89-114baa63d2dd)
+
