@@ -30,8 +30,6 @@ class MainWindow(QMainWindow):
     global toblk 
     toblk = []
     global sv_list 
-    sv_list = [ "maa2", "bom2", "dxb", "sgp", "seo", "ams", "atl", "fra", "lhr", "par", "mad", "dfw", "jfk", "iad", "sea", "canm", "ctum", "sham" ]
-
 
 
 
