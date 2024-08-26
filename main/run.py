@@ -30,7 +30,50 @@ class MainWindow(QMainWindow):
     global toblk 
     toblk = []
     global sv_list 
-    sv_list = [ "maa2", "bom2", "dxb", "sgp", "seo", "ams", "atl", "fra", "lhr", "par", "mad", "dfw", "jfk", "iad", "sea", "canm", "ctum", "sham", "tsnm" ]
+    sv_list = [ "maa2", "bom2", "dxb", "sgp", "seo", "ams", "atl", "fra", "lhr", "par", "mad", "dfw", "jfk", "iad", "sea", "canm", "ctum", "sham" ]
+
+
+
+
+    sv_list =[
+        "eze",
+"gru",
+"lim",
+"scl",
+"jnb",
+"pwg",
+"pwj",
+"pwu",
+"pww",
+"pwz",
+"shb",
+"syd",
+"dfw",
+"jfk",
+"iad",
+"sea",
+"ord",
+"lax",
+"bom2",
+"maa2",
+"dbx",
+"sgp",
+"seo",
+"hkg",
+"tyo",
+"ams",
+"atl",
+"fra",
+"lhr",
+"par",
+"mad",
+"hel",
+"sto",
+"vie",
+"waw",
+"sto2"]
+
+
     global currBlocked 
     currBlocked = [] 
     global alldata
@@ -43,6 +86,7 @@ class MainWindow(QMainWindow):
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.ui.setupUi(self)
         ## calling on load 
+       
         t1 = threading.Thread(target=self.onload)
         t1.start()
         self.ui.pushButton_3.clicked.connect(lambda: os.system("start https://github.com/ShivamNagar2002") )
@@ -51,14 +95,18 @@ class MainWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self.newFncStart)
         self.ui.pushButton_4.clicked.connect(self.unblock)
         self.ui.pushButton_2.clicked.connect(self.f_exit)
-        
+        self.ui.next_page.clicked.connect(self.nextPage)
+        self.ui.pushButton_5.clicked.connect(self.pvPage)
        
 
             
         self.show()
        
+    def nextPage(self):
+        self.ui.stackedWidget.setCurrentIndex(2)
 
-
+    def pvPage(self):
+        self.ui.stackedWidget.setCurrentIndex(1)
     def f_exit(self):
             sys.exit()
             quit()
@@ -201,7 +249,7 @@ class MainWindow(QMainWindow):
         ips =[ ]
         alldata = {}
         alldata.fromkeys(t2)
-
+        
         for x1 in sv_list: 
             x = 0
             ips = []
@@ -212,15 +260,16 @@ class MainWindow(QMainWindow):
                 alldata[x1] = ips        
             except:
                 pass
-        
+       
         self.fetchCurrBlocked()
         time.sleep(0.25)
- 
+        
         checkboxes = self.ui.mainFrame.findChildren(QCheckBox)
         self.ui.progressBar.setValue(50)
         
         for checkbox in checkboxes:
             time.sleep(0.005)
+            
             if checkbox.objectName() in currBlocked:
                 checkbox.setCheckState(Qt.Checked)
                 
